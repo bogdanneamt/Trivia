@@ -1,6 +1,56 @@
+To ensure your game works perfectly, I have synchronized all three files. The key change is that the "Quiz" section starts with the hide class in the HTML, and the JavaScript only removes that class once the data has successfully been fetched from the API.
+
+1. index.html
+This file defines the three distinct "states" of your app: the Setup (Topic selection), the Quiz (Questions), and the Results (Score).
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="setup-container">
+            <h1>Quiz Master</h1>
+            <p>Select your favorite topic to begin!</p>
+            <select id="category-select">
+                <option value="9">General Knowledge</option>
+                <option value="21">Sports</option>
+                <option value="17">Science & Nature</option>
+                <option value="23">History</option>
+                <option value="11">Film</option>
+                <option value="12">Music</option>
+                <option value="15">Video Games</option>
+            </select>
+            <button id="start-btn">Start Game</button>
+        </div>
+
+        <div id="quiz" class="hide">
+            <h2 id="question">Loading...</h2>
+            <div id="answer-buttons" class="btn-grid"></div>
+            <button id="next-btn" class="hide">Next Question</button>
+        </div>
+
+        <div id="result-container" class="hide">
+            <h2>Quiz Finished!</h2>
+            <p id="score-text"></p>
+            <button id="restart-btn">Try a New Topic</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+2. style.css
+The .hide class is the most critical part of this file. It prevents the different screens from overlapping.
+
+CSS
 body {
     background-color: #f0f2f5;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,14 +60,18 @@ body {
 
 .quiz-container {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 450px;
     text-align: center;
 }
 
+h1 { color: #333; margin-bottom: 0.5rem; }
+p { color: #666; margin-bottom: 1.5rem; }
+
+/* The logic that keeps screens separate */
 .hide {
     display: none !important;
 }
@@ -30,10 +84,10 @@ body {
 }
 
 button {
-    padding: 12px;
+    padding: 14px;
     font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #fff;
     transition: all 0.2s ease;
@@ -48,9 +102,7 @@ button:hover:not([disabled]) {
     background-color: #007bff;
     color: white;
     border: none;
-    width: 100%;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 #start-btn:hover, #next-btn:hover {
@@ -71,8 +123,9 @@ button:hover:not([disabled]) {
 
 select {
     width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 1rem;
 }
