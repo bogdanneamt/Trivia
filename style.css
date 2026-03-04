@@ -43,4 +43,24 @@ button:hover { background-color: #e2e2e2; }
     color: white;
     border: none;
     width: 100%;
+
+}
+#setup-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#start-btn {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
 }
