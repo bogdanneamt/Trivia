@@ -1,6 +1,6 @@
 body {
-    background-color: #f4f4f9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,57 +10,69 @@ body {
 
 .quiz-container {
     background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
     text-align: center;
+}
+
+.hide {
+    display: none !important;
 }
 
 .btn-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 12px;
+    margin: 25px 0;
 }
 
 button {
     padding: 12px;
+    font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
     background-color: #fff;
-    transition: 0.3s;
+    transition: all 0.2s ease;
 }
 
-button:hover { background-color: #e2e2e2; }
-.correct { background-color: #9aeabc !important; }
-.wrong { background-color: #ff9999 !important; }
-.hide { display: none; }
+button:hover:not([disabled]) {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+}
 
-#next-btn {
+#start-btn, #next-btn, #restart-btn {
     background-color: #007bff;
     color: white;
     border: none;
     width: 100%;
-
+    font-weight: bold;
+    margin-top: 10px;
 }
-#setup-container {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+#start-btn:hover, #next-btn:hover {
+    background-color: #0056b3;
+}
+
+.correct {
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+    color: #155724;
+}
+
+.wrong {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24;
 }
 
 select {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    margin: 15px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-#start-btn {
-    background-color: #28a745;
-    color: white;
-    font-weight: bold;
 }
