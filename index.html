@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Knowledge Quiz</title>
+    <title>General Knowledge Quiz Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="quiz-container">
         <div id="setup-container">
             <h1>Quiz Master</h1>
-            <p>Select your favorite topic to begin!</p>
+            <p>Select a topic to test your knowledge!</p>
+            
+            <div id="high-score-info">
+                <strong>Best Score for Topic: </strong><span id="best-score-val">0</span>/10
+            </div>
+
             <select id="category-select">
                 <option value="9">General Knowledge</option>
                 <option value="21">Sports</option>
                 <option value="17">Science & Nature</option>
                 <option value="23">History</option>
+                <option value="22">Geography</option>
                 <option value="11">Film</option>
                 <option value="12">Music</option>
                 <option value="15">Video Games</option>
+                <option value="20">Mythology</option>
+                <option value="18">Computers</option>
+                <option value="30">Gadgets</option>
             </select>
             <button id="start-btn">Start Game</button>
         </div>
@@ -26,12 +35,16 @@
         <div id="quiz" class="hide">
             <h2 id="question">Loading...</h2>
             <div id="answer-buttons" class="btn-grid"></div>
-            <button id="next-btn" class="hide">Next Question</button>
+            <div class="controls">
+                <button id="back-btn" class="secondary-btn">Back to Topics</button>
+                <button id="next-btn" class="hide">Next Question</button>
+            </div>
         </div>
 
         <div id="result-container" class="hide">
             <h2>Quiz Finished!</h2>
             <p id="score-text"></p>
+            <p id="new-record-msg" class="hide">🎉 New Personal Best! 🎉</p>
             <button id="restart-btn">Try a New Topic</button>
         </div>
     </div>
