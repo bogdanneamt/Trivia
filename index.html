@@ -9,33 +9,31 @@
 <body>
     <div class="quiz-container">
         <div id="setup-container">
-    <label for="category-select">Choose a Topic:</label>
-    <select id="category-select">
-        <option value="9">General Knowledge</option>
-        <option value="21">Sports</option>
-        <option value="17">Science & Nature</option>
-        <option value="23">History</option>
-        <option value="11">Entertainment: Film</option>
-        <option value="12">Entertainment: Music</option>
-    </select>
-    <button id="start-btn">Start Game</button>
-</div>
-
-<div id="quiz" class="hide">
-    </div>
-        <div id="quiz">
-            <h2 id="question">Question text appears here</h2>
-            <div id="answer-buttons" class="btn-grid">
-                </div>
+            <h1>Quiz Master</h1>
+            <label for="category-select">Choose a Topic:</label>
+            <select id="category-select">
+                <option value="9">General Knowledge</option>
+                <option value="21">Sports</option>
+                <option value="17">Science & Nature</option>
+                <option value="23">History</option>
+                <option value="11">Film</option>
+                <option value="12">Music</option>
+            </select>
+            <button id="start-btn">Start Game</button>
         </div>
+
+        <div id="quiz" class="hide">
+            <h2 id="question">Question text appears here</h2>
+            <div id="answer-buttons" class="btn-grid"></div>
+            <button id="next-btn" class="hide">Next Question</button>
+        </div>
+
         <div id="result-container" class="hide">
             <h2>Quiz Finished!</h2>
             <p id="score-text"></p>
-            <button id="restart-btn">Restart Quiz</button>
+            <button id="restart-btn">Main Menu</button>
         </div>
-        <button id="next-btn" class="hide">Next Question</button>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
