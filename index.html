@@ -8,6 +8,21 @@
 </head>
 <body>
     <div class="quiz-container">
+        <div id="setup-container">
+    <label for="category-select">Choose a Topic:</label>
+    <select id="category-select">
+        <option value="9">General Knowledge</option>
+        <option value="21">Sports</option>
+        <option value="17">Science & Nature</option>
+        <option value="23">History</option>
+        <option value="11">Entertainment: Film</option>
+        <option value="12">Entertainment: Music</option>
+    </select>
+    <button id="start-btn">Start Game</button>
+</div>
+
+<div id="quiz" class="hide">
+    </div>
         <div id="quiz">
             <h2 id="question">Question text appears here</h2>
             <div id="answer-buttons" class="btn-grid">
@@ -22,4 +37,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
